@@ -46,11 +46,6 @@ class Login
 
      }
 
-    public function postTest($code,$gameKey,$picture,$city,$country,$gender,$language,$nickName,$province)
-    {
 
-        return $gameKey;
-
-     }
 
 }
