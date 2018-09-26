@@ -41,8 +41,15 @@ class Login
     {
 
         $result = Db::execute('insert into user_info (gamekey,code,picture,city,country,gender,language,nickName,province) values (?,?,?,?,?,?,?,?,?)',[$gameKey,$code,$picture,$city,$country,$gender,$language,$nickName,$province]);
+
         dump($result);
-        return $result;
+
+        if ($result == 1) {
+
+            $this->ajaxReturn(['code'=>20000, 'msg'=>'success');
+        }
+
+
 
      }
 
