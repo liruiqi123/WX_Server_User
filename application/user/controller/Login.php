@@ -6,7 +6,7 @@ use think\Db;
 use think\Log;
 use think\Model;
 
-class Login
+class Login extends Controller
 {
     public function index()
     {
