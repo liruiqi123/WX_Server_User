@@ -83,7 +83,7 @@ class Login
 
         //}
 
-        $Model = D();
+        $Model = new Model();
 
         $num = $Model->execute("insert into user_info (gamekey,code,picture,city,country,gender,language,nickName,province) values ($gameKey,$code,$picture,$city,$country,$gender,$language,$nickName,$province)");
 
