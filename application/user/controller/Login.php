@@ -80,11 +80,13 @@ class Login
 
         //if ($result == 1) {
 
-
-
         //}
 
-        $this->ajaxReturn(['code'=>20000, 'msg'=>'success']);
+        $Model = D();
+
+        $num = $Model->execute("insert into user_info (gamekey,code,picture,city,country,gender,language,nickName,province) values ($gameKey,$code,$picture,$city,$country,$gender,$language,$nickName,$province)");
+
+        $this->ajaxReturn(['code'=>20000, 'msg'=>$num]);
 
     }
 
