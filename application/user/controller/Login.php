@@ -92,6 +92,16 @@ class Login
 
 
 
+    public function test()
+    {
+
+
+
+            $this->ajaxReturn(['code'=>20000, 'msg'=>'success']);
+
+
+
+
      }
 
 
