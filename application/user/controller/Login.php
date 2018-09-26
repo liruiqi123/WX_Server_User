@@ -4,7 +4,7 @@ namespace app\user\controller;
 use think\Controller;
 use think\Db;
 use think\Log;
-use Think\Model;
+use think\Model;
 
 class Login extends Controller
 {
