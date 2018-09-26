@@ -22,7 +22,8 @@ class Login
          * @return void
          */
         protected function ajaxReturn($data,$type='',$json_option=0) {
-            if(empty($type)) $type  =   C('DEFAULT_AJAX_RETURN');
+            //if(empty($type)) $type  =   C('DEFAULT_AJAX_RETURN');
+            if(empty($type)) $type  =   "JSON";
             switch (strtoupper($type)){
                 case 'JSON' :
                     // 返回JSON数据格式到客户端 包含状态信息
