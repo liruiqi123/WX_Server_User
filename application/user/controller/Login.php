@@ -80,7 +80,7 @@ class Login
 
         if ($result == 1) {
 
-            return"'code'=>20000, 'msg'=>'success'";
+            $this->ajaxReturn(['code'=>20000, 'msg'=>'success']);
 
         }
 
