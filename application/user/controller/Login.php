@@ -74,15 +74,17 @@ class Login
     public function postUserInfo($code,$gameKey,$picture,$city,$country,$gender,$language,$nickName,$province)
     {
 
-        $result = Db::execute('insert into user_info (gamekey,code,picture,city,country,gender,language,nickName,province) values (?,?,?,?,?,?,?,?,?)',[$gameKey,$code,$picture,$city,$country,$gender,$language,$nickName,$province]);
+        //$result = Db::execute('insert into user_info (gamekey,code,picture,city,country,gender,language,nickName,province) values (?,?,?,?,?,?,?,?,?)',[$gameKey,$code,$picture,$city,$country,$gender,$language,$nickName,$province]);
 
-        dump($result);
+        //dump($result);
 
-        if ($result == 1) {
+        //if ($result == 1) {
 
-            $this->ajaxReturn(['code'=>20000, 'msg'=>'success']);
 
-        }
+
+        //}
+
+        $this->ajaxReturn(['code'=>20000, 'msg'=>'success']);
 
     }
 
