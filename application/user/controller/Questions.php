@@ -55,7 +55,12 @@ class Questions extends Controller
 
           $list = Db::query("select * from questions");
               if($list){
-                  dump($list);
+                  $quests0 = $questions[0];
+                  $quests1 = $questions[1];
+                  $quests2 = $questions[2];
+                  dump($quests0);
+                  dump($quests1);
+                  dump($quests2);
               } else {
                   return '0000';
               }
