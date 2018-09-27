@@ -55,7 +55,7 @@ class Questions extends Controller
 
           $list = Db::query("select * from questions");
               if($list){
-                  return $list;
+                  dump($list);
               } else {
                   return '0000';
               }
