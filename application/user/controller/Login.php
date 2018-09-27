@@ -83,11 +83,10 @@ class Login extends Controller
 
         //}
 
-        $Model = new Model();
 
-        $num = $Model->execute("insert into user_info (gamekey,code,picture,city,country,gender,language,nickName,province) values ($gameKey,$code,$picture,$city,$country,$gender,$language,$nickName,$province)");
+        $result = Db::execute('insert into user_info (gamekey,code,picture,city,country,gender,language,nickName,province) values (?,?,?,?,?,?,?,?,?)',[$gameKey,$code,$picture,$city,$country,$gender,$language,$nickName,$province]);
 
-        $this->ajaxReturn(['code'=>20000, 'msg'=>$num]);
+        $this->ajaxReturn(['code'=>20000, 'msg'=>$result]);
 
     }
 
