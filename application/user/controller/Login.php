@@ -75,18 +75,18 @@ class Login extends Controller
     public function postUserInfo($code,$gameKey,$picture,$city,$country,$gender,$language,$nickName,$province)
     {
 
-        //$result = Db::execute('insert into user_info (gamekey,code,picture,city,country,gender,language,nickName,province) values (?,?,?,?,?,?,?,?,?)',[$gameKey,$code,$picture,$city,$country,$gender,$language,$nickName,$province]);
-
-        //dump($result);
-
-        //if ($result == 1) {
-
-        //}
-
-
         $result = Db::execute('insert into user_info (gamekey,code,picture,city,country,gender,language,nickName,province) values (?,?,?,?,?,?,?,?,?)',[$gameKey,$code,$picture,$city,$country,$gender,$language,$nickName,$province]);
 
-        $this->ajaxReturn(['code'=>20000, 'msg'=>$result]);
+        if ($result == 1) {
+
+           $this->ajaxReturn(['code'=>20000, 'msg'=>'操作成功']);
+
+        }else{
+
+           $this->ajaxReturn(['code'=>20000, 'msg'=>'操作失败']);
+
+        }
+
 
     }
 
