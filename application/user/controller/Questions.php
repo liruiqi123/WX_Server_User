@@ -55,14 +55,16 @@ class Questions extends Controller
 
           $list = Db::query("select * from questions");
               if($list){
-                  $quests0 = $list[0];
-                  $quests1 = $list[1];
-                  $quests2 = $list[2];
-                  dump($quests0);
-                  dump($quests1);
-                  dump($quests2);
+                 $this->ajaxReturn ( [
+                     'code' => 20000,
+                     'msg' => '获取成功',
+                     'quests' => $list,
+                             ]);
               } else {
-                  return '0000';
+                 $this->ajaxReturn ( [
+                      'code' => 40000,
+                      'msg' => '获取失败'
+                              ]);
               }
 
      }
