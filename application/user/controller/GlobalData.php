@@ -83,6 +83,52 @@ class GlobalData extends Controller
 
 
 
+     public function getGameFlagOld(){
+             $wxUserModel = M('wx_user');
+             try {
+                 $res = $wxUserModel->where(['openid'=>$this->openid])->setDec('zm_points', 1);
+
+                 if (empty($res)) {
+                     $this->ajaxReturn ( [
+                         'code' => 40500,
+                         'msg' => '数据异常',
+                         'ctime' => -1
+                     ]);
+                 }
+             } catch (Exception $e) {
+                 $this->ajaxReturn ( [
+                     'code' => 40500,
+                     'msg' => '数据异常',
+                     'ctime' => -1
+                 ]);
+             }
+
+             $ctimes = $wxUserModel->where(['openid'=>$this->openid])->getField('zm_points');
+
+             $this->ajaxReturn ( [
+                 'code' => 20000,
+                 'msg' => '获取成功',
+                 'flag' => 'flag',
+                 'ctime' => $ctimes
+             ]);
+         }
+
+
+
+
+
+         public function getGameFlag(){
+
+                      $this->ajaxReturn ( [
+                          'code' => 20000,
+                          'msg' => '获取成功',
+                          'flag' => 'flag',
+                          'ctime' => 3
+                      ]);
+                  }
+
+
+
 
 
 }
