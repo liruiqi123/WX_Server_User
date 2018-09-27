@@ -52,7 +52,7 @@ class Questions extends Controller
 
     public function startGame()
     {
-          $questModel = M('questions');
+
           $list = Db::query("select * from questions");
               if($list){
                   return $list;
