@@ -56,7 +56,7 @@ class Questions extends Controller
     public function startGame()
     {
 
-          $list = Db::query("select * from questions");
+          $list = Db::query("select * from question_1");
               if($list){
                  $this->ajaxReturn ( [
                      'code' => 20000,
