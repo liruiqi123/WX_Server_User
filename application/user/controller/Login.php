@@ -111,6 +111,14 @@ class Login extends Controller
 
 
 
+        public function testModel()
+        {
+             $this->ajaxReturn(['code'=>20000, 'msg'=>'success']);
+        }
+
+
+
+
 
 
 }
