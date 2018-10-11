@@ -6,6 +6,8 @@ use think\Db;
 use think\Log;
 use think\Model;
 
+use app\user\model\Test;
+
 class Login extends Controller
 {
     public function index()
@@ -113,7 +115,8 @@ class Login extends Controller
 
         public function testModel()
         {
-             $this->ajaxReturn(['code'=>20000, 'msg'=>'success']);
+             $user = User::get(1);
+             $this->ajaxReturn(['code'=>20000, 'msg'=>'success','result'=>$user]);
         }
 
 
