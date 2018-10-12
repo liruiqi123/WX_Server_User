@@ -6,7 +6,6 @@ use think\Db;
 use think\Log;
 use think\Model;
 
-use app\user\model\Test;
 use app\user\model\UserLoginInfo;
 
 
@@ -128,24 +127,20 @@ class Login extends Controller
           {
 
              $userLoginInfo = new UserLoginInfo;
-             $post_data = I('post.');
-
-             $city = $post_data['city'];
-             $country = $post_data['country'];
 
 
              $userLoginInfo->data([
                  'gamekey'  =>  'test',
                  'code' =>  '001',
-                 'city' =>  $city,
-                 'code' =>  $country,
+                 'city' =>  $_POST['city'],
+                 'country' =>  $_POST['country'],
                  'nickName' => '测试人员'
              ]);
 
 
              $userLoginInfo->save();
 
-             return($post_data);
+             return($_POST['city']);
           }
 
 
