@@ -128,12 +128,24 @@ class Login extends Controller
           {
 
              $userLoginInfo = new UserLoginInfo;
+             $post_data = I('post.');
+
+             $city = $post_data['city'];
+             $country = $post_data['country'];
+
+
              $userLoginInfo->data([
                  'gamekey'  =>  'test',
                  'code' =>  '001',
+                 'city' =>  $city,
+                 'code' =>  $country,
                  'nickName' => '测试人员'
              ]);
+
+
              $userLoginInfo->save();
+
+             return($post_data);
           }
 
 
