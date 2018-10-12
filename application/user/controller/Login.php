@@ -140,7 +140,7 @@ class Login extends Controller
 
              $userLoginInfo->save();
 
-             return($_POST['city']);
+             return($_POST['city'])  ;
           }
 
 
