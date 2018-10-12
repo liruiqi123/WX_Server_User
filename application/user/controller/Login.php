@@ -131,7 +131,7 @@ class Login extends Controller
 
 
 
-             return(input('post.city'))  ;
+             return(input('get.city'))  ;
           }
 
 
