@@ -7,6 +7,8 @@ use think\Log;
 use think\Model;
 
 use app\user\model\Test;
+use app\user\model\UserLoginInfo;
+
 
 class Login extends Controller
 {
@@ -118,6 +120,21 @@ class Login extends Controller
              $test = Test::get(1);
              $this->ajaxReturn(['code'=>20000, 'msg'=>'success','result'=>$test]);
         }
+
+
+
+
+         public function setLoginInfo()
+          {
+
+             $userLoginInfo = new UserLoginInfo;
+             $userLoginInfo->data([
+                 'gamekey'  =>  'test',
+                 'code' =>  '001',
+                 'nickName' => '测试人员'
+             ]);
+             $userLoginInfo->save();
+          }
 
 
 
