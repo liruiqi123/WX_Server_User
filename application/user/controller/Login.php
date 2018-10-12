@@ -128,6 +128,16 @@ class Login extends Controller
 
              $userLoginInfo = new UserLoginInfo;
 
+             $userLoginInfo->data([
+                 'gamekey'  =>  'test',
+                 'code' =>  '001',
+                 'city' =>  input('get.city'),
+                 'country' =>  input('get.country'),
+                 'nickName' => '测试人员'
+             ]);
+
+
+             $userLoginInfo->save();
 
 
 
