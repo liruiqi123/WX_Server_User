@@ -16,7 +16,7 @@ class Book
     {
         $bookQuestionField = new BookQuestionField;
 
-        $data = $user->select();
+        $data = $bookQuestionField->select();
 
         return($data);
     }
