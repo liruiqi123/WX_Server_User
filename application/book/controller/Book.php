@@ -18,7 +18,7 @@ class Book
 
         $data = $bookQuestionField->select();
 
-        return ['data'=>$data,'code'=>1,'message'=>'操作完成'];
+        $this->return ['data'=>$data,'code'=>1,'message'=>'操作完成'];
     }
 
 
