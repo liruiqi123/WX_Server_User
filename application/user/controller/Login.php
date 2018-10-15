@@ -7,6 +7,8 @@ use think\Log;
 use think\Model;
 
 use app\user\model\UserLoginInfo;
+use app\user\model\UserCodeInfo;
+
 
 
 class Login extends Controller
@@ -149,9 +151,22 @@ class Login extends Controller
            public function setLoginCode()
         {
 
-           $userLoginInfo = new UserLoginInfo;
+           $userCodeInfo = new UserCodeInfo;
 
-           $userLoginInfo->data([
+           $url = "https://api.weixin.qq.com/sns/jscode2session?appid=wx7a1aa038211464b4&secret=56a72e174923c1bdadd7cb39fefa101f&js_code=$code&grant_type=authorization_code";
+
+           $info = file_get_contents($url);
+
+           $json = json_decode($info);//对json数据解码
+
+           $arr = get_object_vars($json);
+
+           $openid = $arr['openid'];
+
+           $session_key = $arr['session_key'];
+
+
+           $userCodeInfo->data([
                'gamekey'  =>  'test',
                'code' =>  '001',
                'city' =>  input('get.city'),
@@ -160,11 +175,9 @@ class Login extends Controller
            ]);
 
 
-           $userLoginInfo->save();
+           $userCodeInfo->save();
 
 
-
-           return(input('get.city'))  ;
         }
 
 
