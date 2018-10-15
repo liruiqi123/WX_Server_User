@@ -21,11 +21,10 @@ class Book
     {
         $bookQuestionField = new BookQuestionField;
 
-        $data = $bookQuestionField->select();
+        $data = $bookQuestionField->where('id','>',1)->select();
 
         $this->ajaxReturn(['data'=>$data,'code'=>1,'message'=>'操作完成']);
 
-        //$this->return ['data'=>json($data),'code'=>1,'message'=>'操作完成'] ;
     }
 
 
