@@ -1,6 +1,10 @@
 <?php
 namespace app\book\controller;
 
+
+use app\book\model\BookQuestionField;
+
+
 class Book
 {
     public function index()
