@@ -1,6 +1,11 @@
 <?php
 namespace app\book\controller;
 
+use think\Controller;
+use think\Db;
+use think\Log;
+use think\Model;
+
 
 use app\book\model\BookQuestionField;
 
