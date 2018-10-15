@@ -18,7 +18,9 @@ class Book
 
         $data = $bookQuestionField->select();
 
-        $this->return ['data'=>json($data),'code'=>1,'message'=>'操作完成'] ;
+         $this->ajaxReturn(['data'=>$data,'code'=>1,'message'=>'操作完成']);
+
+        //$this->return ['data'=>json($data),'code'=>1,'message'=>'操作完成'] ;
     }
 
 
