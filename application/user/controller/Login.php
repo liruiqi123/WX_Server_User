@@ -184,5 +184,16 @@ class Login extends Controller
 
 
 
+            public function dologin(){
+
+                 $post_data = I('post.');
+                 echo($post_data);
+
+
+            }
+
+
+
+
 
 }
